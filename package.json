@@ -1,0 +1,24 @@
+{
+  "name": "media_server_interface",
+  "version": "1.1.0",
+  "description": "media web interface for torrenting movies and automatically placing them in a specified directory",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cnoott/media_server_interface.git"
+  },
+  "keywords": [
+    "media",
+    "plex",
+    "torrenting"
+  ],
+  "author": "Liam Amadio",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cnoott/media_server_interface/issues"
+  },
+  "homepage": "https://github.com/cnoott/media_server_interface#readme"
+}
