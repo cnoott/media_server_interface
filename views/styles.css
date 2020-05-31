@@ -1,0 +1,15 @@
+/* Background color */
+body {
+	background-color: #00111a;
+	color: yellow;
+	font-family: "Lucida Console", Courier, monospace;
+	
+	/* Centering */
+	margin: auto;
+	width: 50%;
+	padding: 10px;
+}
+.ghost-button {
+	background-color: #ccff66;
+	border: none;
+}

@@ -20,5 +20,15 @@
   "bugs": {
     "url": "https://github.com/cnoott/media_server_interface/issues"
   },
-  "homepage": "https://github.com/cnoott/media_server_interface#readme"
+  "homepage": "https://github.com/cnoott/media_server_interface#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cheerio": "^1.0.0-rc.3",
+    "child_process": "^1.0.2",
+    "ejs": "^3.1.3",
+    "express": "^4.17.1",
+    "fs": "0.0.1-security",
+    "selenium": "^2.20.0",
+    "selenium-webdriver": "^4.0.0-alpha.7"
+  }
 }

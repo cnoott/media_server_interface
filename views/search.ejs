@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>pi-media interface</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+  </head>
+  <body>
+    <div class="container">
+        <h1>Search Results</h1>
+      <fieldset>
+        <form action="/search" method="post">
+          <input name="search" type="text" class="ghost-input" placeholder="Search for torrent" required>
+          <input type="submit" class="ghost-button" value="Search Torrent">
+        </form>
+      </fieldset>
+    </div>
+    <div class="output_container">
+        <table border=1 style="width:100%">
+            <tr>
+                <th>File</th>
+                <th>Seeders</th>
+                <th>Leechers</th>
+				<th>Select</th>
+            </tr>
+            <% for (var i=0; i < 10; i++) { %>
+            <tr>
+                <td> <%= data[i].name %> </td>
+                <td> <%= data[i].seeders %> </td>
+                <td> <%= data[i].leechers %> </td>
+                <td> <form action="/choice" method="post"><input type="submit" name="choice" value=<%= i %>></button></form>
+            </tr>
+            <% } %>
+        </table>
+    </div>
+  </body>
+</html>

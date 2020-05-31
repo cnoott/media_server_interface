@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Download Progress</title>
+		<link rel="stylesheet" type="text/css" href="styles.css"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+		<h1> Download in progress </h1>
+		<br>
+		<div class="download_container">
+			<p id="download_name"> Now Downloading: <%= data.name %> </p>
+			<p id="progress" data-test=<%= data.progress %>>Progress: <%= data.progress %> </p>
+
+			<form id="progress_form" name="progress_form" class="progress_form" action="/progress" method="post"> <input type="submit" name="progress"style="display: none;"></button></form>
+			<form id="finished_form" name="finshed_form" class="finshed_form" action="/finished" method="post"> <input type="submit" name="finished"style="display: none;"></button></form>
+
+	<script type="text/javascript">
+		if (document.getElementById('progress').dataset.test == "100") {document.getElementById("finished_form").submit()}
+
+		function loop() {
+			setTimeout(() => {
+				document.getElementById("progress_form").submit()
+				var progress = document.getElementById('progress').dataset.test
+				console.log(progress)
+				if (progress != "100") {loop(); console.log('loop started') }
+			}, 20000)
+		}
+		loop()
+	</script>
+		</div>
+    </body>
+</html>
