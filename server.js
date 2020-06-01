@@ -103,7 +103,7 @@ async function autoPirate(option) {
 	let magnet_link = torrentArray_[option].magnetLink;
 	magnet_link = "'"+magnet_link+"'";
 	console.log(magnet_link);
-	exec('transmission-remote --auth transmission:pizzamasterrace4 -a ' + magnet_link, (err, stdout, stderr) => {
+	exec('transmission-remote --auth ' + transmissionLogin + ' -a ' + magnet_link, (err, stdout, stderr) => {
 		if (err) {
 			console.error(err);
 		}
@@ -115,7 +115,7 @@ async function autoPirate(option) {
 async function showProgress(option) {
 	return new Promise(async (resolve, reject) => {
 		console.log('executing list command');
-		exec('transmission-remote --auth transmission:pizzamasterrace4 -l', (err, stdout, stderr) => {
+		exec('transmission-remote --auth '+ transmissionLogin + ' -l', (err, stdout, stderr) => {
 			if (err) {
 				console.error(err);
 			}
@@ -129,7 +129,7 @@ async function showProgress(option) {
 }
 async function removeTorrent() {
 	console.log('removing torrent');
-	exec("transmission-remote --auth transmission:pizzamasterrace4 -t all -r" ,(err, stdout, stderr) => {
+	exec("transmission-remote --auth " + transmissionLogin + " -t all -r" ,(err, stdout, stderr) => {
 		if (err) {
 			console.error('transmission-remote remove error');
 		}
@@ -145,6 +145,7 @@ async function removeTorrent() {
 let stats = {space: "", timesUsed: 0};
 let torrentArray_ = []; //need a _ to differentiate the parameter and the array
 let progress_data = {progress: "", name: ""}; //for use in /progress
+let transmissionLogin = "";
 /*
  * Http Server
  */
