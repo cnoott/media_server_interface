@@ -1,0 +1,4 @@
+FIX
+=====
+1. Reset file name object to ""
+2. If thepiratebay returns nothing tell the user rather than display blank 

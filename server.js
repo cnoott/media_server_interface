@@ -145,7 +145,7 @@ async function removeTorrent() {
 let stats = {space: "", timesUsed: 0};
 let torrentArray_ = []; //need a _ to differentiate the parameter and the array
 let progress_data = {progress: "", name: ""}; //for use in /progress
-let transmissionLogin = "";
+let transmissionLogin = "transmission:pizzamasterrace4";
 /*
  * Http Server
  */
