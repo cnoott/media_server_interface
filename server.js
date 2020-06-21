@@ -42,7 +42,7 @@ class Torrent {
  */
 async function availableSpace() {
 	return new Promise((resolve, reject) => {
-		exec("df --output=pcent /home/pi/plexstorage | tr -dc '0-9'", (err, stdout, stderr) => {
+		exec("df --output=pcent /home/noot-server/media | tr -dc '0-9'", (err, stdout, stderr) => {
 			if (err) {
 				reject (err);
 				console.log('availableSpace() error');
