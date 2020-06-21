@@ -168,13 +168,17 @@ app.post('/search', async (req, res) => {
 	let search = await req.body.search;
 	console.log('search query:' + search);
 	searchPirateBay(search).then(torrentArray => {
-		torrentArray_ = torrentArray;	
+		torrentArray_ = torrentArray;
+		if (torrentArray[0] == "") {
+			console.log('thepiratebay may be down');
+		}
 		res.render('search', {data:torrentArray});
 	})	
 })
 var choice; //for use in both functions below;
 app.post('/choice', async (req, res) => {
 	progress_data.progress = ""; //resets value;
+	progress_data.name = ""; //resets value
 	choice = req.body.choice;
 	console.log(choice + 'button pressed');
 	await autoPirate(choice);
@@ -201,7 +205,7 @@ app.post('/finished', async (req, res) => {
 	console.log('posting finished page');
 	removeTorrent();
 	res.render('finished', {data:progress_data});
-	incTimesUsed();
+	incTimesUsed(stats);
 })
 app.get('/finished', async (req, res) => {
 	removeTorrent();
