@@ -158,11 +158,16 @@ app.listen(3000, () => {
 })
 
 app.get('/', async (req, res) => {
+	res.render('index')
+})
+app.get('/movie_search', async (req, res) => {
 	availableSpace().then(stdout => {
-
 		stats.space = stdout;
-		res.render('index', {data:stats})
+		res.render('movie_search', {data:stats})
 	})
+})
+app.get('/underconstruction', (req, res) => {
+	res.render('underconstruction');
 })
 app.post('/search', async (req, res) => {
 	let search = await req.body.search;

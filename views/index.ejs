@@ -7,34 +7,15 @@
     <link rel="stylesheet" type="text/css" href="styles.css">
   </head>
   <body>
-    <div class="container">
-        <h1>Search for Movie</h1>
-      <fieldset>
-        <form action="/search" method="post">
-          <input name="search" type="text" class="ghost-input" placeholder="Search for torrent" required>
-		  <input type="submit" class="ghost-button" value="Search Torrent" onclick='document.getElementById("wait").innerHTML = "Fetching Results... Please wait"'>
-        </form>
-      </fieldset>
-	  <p id='wait'> </p>
-    </div >
-	<br>
-	<br>
-	<div class="stats_container">
-		<h1> Server Statistics </h1>
-		<table border = 1 style="center">
-			<tr>
-				<th>Used Space on Drive</th>
-				<td><%= data.space %>%</td>
-			</tr>
-			<tr> 
-				<th>Times used since restart</th>
-				<td><%= data.timesUsed %></td>
-			</tr>
-			<tr> 
-				<th> Version </th>
-				<td> 1.2.0 </td>
-			</tr>
-		</table>
-	</div>
+    <div class="title_container">
+        <h1>Data Center Interface</h1>
+	<h3> What would you like to do today? </h3>
+    </div>
+    <div class="options_container">
+	    <ul class="option_list">
+		    <li><a href="/movie_search">Search for Movie </a></li>
+		    <li><a href="/underconstruction">Picture Index </a></li>
+	    </ul>
+    </div>
   </body>
 </html>
